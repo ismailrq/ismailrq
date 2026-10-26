@@ -5,6 +5,12 @@ type ProjectPresentation = {
   highlights: string[];
   period: string;
   groups: { label: string; technologies: string[] }[];
+  flow?: {
+    title: string;
+    caption: string;
+    bidirectional?: boolean;
+    stages: { name: string; technology: string; icon: "code" | "cpu" | "cloud" | "database" | "network" | "chart" | "phone" | "box" | "location" }[];
+  };
 };
 
 const presentations: Record<string, ProjectPresentation> = {
@@ -12,6 +18,15 @@ const presentations: Record<string, ProjectPresentation> = {
     category: "Backend & cloud",
     highlights: ["FastAPI", "Celery", "AWS"],
     period: "Jan – Sep 2025",
+    flow: {
+      title: "Media pipeline",
+      caption: "Downloads · Audio conversion · Metadata",
+      stages: [
+        { name: "API", technology: "FastAPI", icon: "code" },
+        { name: "Workers", technology: "Celery + Redis", icon: "cpu" },
+        { name: "Delivery", technology: "Amazon S3", icon: "cloud" },
+      ],
+    },
     groups: [
       { label: "Application", technologies: ["Python", "FastAPI", "Pydantic", "Gunicorn", "Uvicorn"] },
       { label: "Media processing", technologies: ["yt-dlp", "FFmpeg", "Celery"] },
@@ -25,6 +40,15 @@ const presentations: Record<string, ProjectPresentation> = {
     category: "Network analysis",
     highlights: ["Python", "NetworkX", "SQLite"],
     period: "Sep 2025 – Jan 2026",
+    flow: {
+      title: "Analysis workflow",
+      caption: "Static routing · OSPF-style routing",
+      stages: [
+        { name: "Model", technology: "SQLite", icon: "database" },
+        { name: "Analyze", technology: "NetworkX", icon: "network" },
+        { name: "Compare", technology: "Matplotlib", icon: "chart" },
+      ],
+    },
     groups: [
       { label: "Language & data", technologies: ["Python", "SQL", "SQLite", "JSON"] },
       { label: "Analysis & visualization", technologies: ["NetworkX", "Matplotlib"] },
@@ -35,6 +59,16 @@ const presentations: Record<string, ProjectPresentation> = {
     category: "Mobile & augmented reality",
     highlights: ["Flutter", "Unity", "ARCore"],
     period: "Sep 2022 – Aug 2026",
+    flow: {
+      title: "AR integration",
+      caption: "Location + AR session readiness",
+      bidirectional: true,
+      stages: [
+        { name: "Flutter", technology: "Dart", icon: "phone" },
+        { name: "Unity", technology: "C#", icon: "box" },
+        { name: "Geospatial", technology: "ARCore", icon: "location" },
+      ],
+    },
     groups: [
       { label: "Mobile", technologies: ["Dart", "Flutter 3.x", "BLoC"] },
       { label: "AR & location", technologies: ["Unity", "C#", "ARCore", "ARCore Extensions", "Geospatial API", "Geolocation", "Google Maps API"] },
