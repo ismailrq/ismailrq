@@ -46,7 +46,7 @@ button, summary { cursor: pointer; }
 .site-nav a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 8px; color: var(--muted); transition: color 150ms ease; }
 .site-nav a:hover, .site-nav a[aria-current] { color: var(--foreground); }
 .site-main { margin: 0; padding-top: var(--header-height); }
-.landing-intro { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 40px; align-items: start; padding-block: 56px; }
+.landing-intro { display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 40px; align-items: center; padding-block: 56px; }
 .status-dot { display: inline-block; flex: 0 0 auto; width: 6px; height: 6px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 4px rgba(200,245,106,.08); }
 .terminal-eyebrow { font-family: var(--font-geist-mono); color: var(--cobalt); font-size: .7rem; margin: 0 0 14px; letter-spacing: .04em; }
 .landing-intro h1 { margin: 0; font-size: clamp(2.3rem, 4.3vw, 3.5rem); font-weight: 600; letter-spacing: -.055em; line-height: 1.12; }
@@ -54,7 +54,12 @@ button, summary { cursor: pointer; }
 .landing-role { margin: 20px 0 0; font-size: .8rem; color: var(--muted); line-height: 1.6; }
 .landing-role span { color: var(--quiet); margin-inline: 8px; }
 .landing-summary { max-width: 650px; margin: 22px 0 0; font-size: 1rem; line-height: 1.8; color: #bec3cb; }
-.landing-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; margin-top: 28px; }
+.hero-socials { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+.hero-social-link { --social-accent: var(--foreground); display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border: 1px solid var(--border); color: var(--muted); transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease; }
+.hero-social-link:hover, .hero-social-link:focus-visible { color: var(--social-accent); border-color: var(--social-accent); background-color: color-mix(in srgb, var(--social-accent) 6%, transparent); }
+.hero-social-link svg { flex-shrink: 0; }
+.hero-social-linkedin { --social-accent: #78b8ff; }
+.hero-social-email { --social-accent: var(--mint); }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 44px; padding: 11px 17px; border: 1px solid var(--border); border-radius: 5px; font-size: .8rem; font-weight: 550; transition: background 150ms ease; }
 .button-primary { background: var(--cobalt); color: #151922; border-color: var(--cobalt); }
 .button-primary:hover { background: #b0bdff; }
@@ -153,7 +158,6 @@ button, summary { cursor: pointer; }
   .landing-intro { grid-template-columns: minmax(0, 1fr); gap: 24px; padding-block: 44px; }
   .landing-intro h1 { font-size: clamp(2rem, 6vw, 2.8rem); }
   .landing-summary { font-size: .95rem; }
-  .landing-actions { gap: 20px; }
   .landing-section { padding-block: 36px; }
   .projects-grid, .minimal-contact-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
   .minimal-contact-grid { gap: 36px; }
@@ -170,8 +174,6 @@ button, summary { cursor: pointer; }
   .site-header-inner { flex-direction: column; align-items: stretch; justify-content: center; gap: 4px; padding-block: 10px 4px; }
   .site-nav { width: 100%; justify-content: space-between; gap: 12px; }
   .site-brand { align-self: flex-start; font-size: .95rem; line-height: 28px; }
-  .landing-actions { gap: 18px; }
-  .landing-actions .button { width: 100%; }
   .contact-email { font-size: .9rem; }
 }
 
@@ -212,7 +214,7 @@ button, summary { cursor: pointer; }
 .profile-card-location { margin: 8px 0 0; font-size: .7rem; color: var(--muted); }
 
 @media (min-width: 761px) and (max-width: 1000px) {
-  .landing-intro { grid-template-columns: minmax(0, 1fr) 280px; gap: 28px; }
+  .landing-intro { grid-template-columns: 280px minmax(0, 1fr); gap: 28px; }
   .landing-intro h1 { font-size: 2.3rem; }
   .profile-card-body { padding: 18px; }
 }
@@ -235,7 +237,6 @@ button, summary { cursor: pointer; }
   .landing-intro { gap: 28px; }
   .project-card { padding: 24px; }
   .profile-card { max-width: none; }
-  .landing-actions { column-gap: 20px; row-gap: 14px; }
 }
 
 

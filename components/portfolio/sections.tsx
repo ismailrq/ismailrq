@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { CSSProperties } from "react";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
 import { ContactForm } from "./ContactForm";
 import { experience, profile, projects, skillCategories, skills, socials } from "@/data/portfolio";
 import { getProjectPresentation } from "@/data/project-presentation";
@@ -9,14 +9,6 @@ import { getProjectPresentation } from "@/data/project-presentation";
 export function HeroSection() {
   return (
     <section className="landing-intro page-container" id="home" aria-labelledby="intro-title">
-      <div className="landing-copy" id="about">
-        <h1 id="intro-title">From architecture<br /><span>to delivery.<span className="terminal-caret headline-caret" aria-hidden="true" /></span></h1>
-        <p className="landing-summary">I’m a software engineer focused on application architecture, technical leadership, and product delivery. I keep solutions clear, communication straightforward, and software built to last.</p>
-        <div className="landing-actions">
-          <a className="button button-primary" href="#projects">View my work <ArrowDown size={15} aria-hidden="true" /></a>
-          <a className="text-link" href="/cv/index.html" target="_blank" rel="noopener noreferrer">View CV <ArrowUpRight size={15} aria-hidden="true" /></a>
-        </div>
-      </div>
       <aside className="profile-card" aria-label="Profile summary">
         <div className="profile-portrait-stage">
           <Image
@@ -34,6 +26,38 @@ export function HeroSection() {
           <p className="profile-card-location">{profile.location}</p>
         </div>
       </aside>
+      <div className="landing-copy" id="about">
+        <h1 id="intro-title">From architecture<br /><span>to delivery.<span className="terminal-caret headline-caret" aria-hidden="true" /></span></h1>
+        <p className="landing-summary">I’m a software engineer focused on application architecture, technical leadership, and product delivery. I keep solutions clear, communication straightforward, and software built to last.</p>
+        <nav className="hero-socials" aria-label="Connect with Ismail">
+          {socials.filter(social => social.url && (social.label === "GitHub" || social.label === "LinkedIn")).map(social => (
+            <a
+              className={`hero-social-link hero-social-${social.label.toLowerCase()}`}
+              key={social.label}
+              href={social.url}
+              aria-label={`${social.label} profile`}
+              title={social.label}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {social.label === "GitHub" ? (
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M9 19c-4.3 1.3-4.3-2.5-6-3m12 6v-3.9a3.4 3.4 0 0 0-.9-2.6c3-.3 6.2-1.5 6.2-6.8a5.3 5.3 0 0 0-1.5-3.7A4.9 4.9 0 0 0 18.7 1S17.5.7 15 2.5a12.8 12.8 0 0 0-6 0C6.5.7 5.3 1 5.3 1a4.9 4.9 0 0 0-.1 4A5.3 5.3 0 0 0 3.7 8.7c0 5.3 3.2 6.5 6.2 6.8a3.4 3.4 0 0 0-.9 2.6V22" />
+                </svg>
+              ) : (
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v2a6 6 0 0 1 2-3Z" />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              )}
+            </a>
+          ))}
+          <a className="hero-social-link hero-social-email" href={`mailto:${profile.email}`} aria-label="Email Ismail" title="Email">
+            <Mail size={22} strokeWidth={1.7} aria-hidden="true" />
+          </a>
+        </nav>
+      </div>
     </section>
   );
 }
