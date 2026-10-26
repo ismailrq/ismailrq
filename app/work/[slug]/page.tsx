@@ -38,10 +38,12 @@ export default async function ProjectPage({ params }: Props) {
         <div className="case-content">
           <aside className="case-ownership"><h2>My contribution</h2><p>{project.role}</p></aside>
           <div className="case-sections">
-            <section aria-labelledby="case-challenge"><h2 id="case-challenge">The challenge</h2><p>{project.constraint}</p></section>
-            <section aria-labelledby="case-architecture"><h2 id="case-architecture">Architecture decisions</h2><p>{project.decision}</p></section>
-            <section aria-labelledby="case-reliability"><h2 id="case-reliability">Reliability &amp; failure handling</h2><p>{project.reliability}</p></section>
-            <section aria-labelledby="case-delivery"><h2 id="case-delivery">What I delivered</h2><p>{project.outcome}</p></section>
+            {project.details.map((detail, index) => (
+              <section key={detail.label} aria-labelledby={`case-detail-${index}`}>
+                <h2 id={`case-detail-${index}`}>{detail.label}</h2>
+                <p>{detail.description}</p>
+              </section>
+            ))}
           </div>
         </div>
         <div className="case-next"><Link className="text-link" href="/#projects"><ArrowLeft size={15} aria-hidden="true" /> All projects</Link><Link className="text-link" href="/#contact">Discuss a project <ArrowUpRight size={15} aria-hidden="true" /></Link></div>

@@ -48,6 +48,7 @@ export type Project = {
   name: string;
   summary: string;
   description: string;
+  details: { label: string; description: string }[];
   role: string;
   constraint: string;
   decision: string;
@@ -317,9 +318,31 @@ export const projects: Project[] = [
   {
     "label": "FREELANCE · JAN–SEP 2025",
     "slug": "mediahunter",
-    "name": "Media processing service",
-    "summary": "Media downloads, audio conversion, and metadata extraction.",
-    "description": "A service for downloading media, converting audio, and extracting metadata.",
+    "name": "Media Processing Platform",
+    "summary": "Media downloads, audio conversion, and metadata extraction with secure cloud delivery and automatic scaling on AWS.",
+    "description": "Developed a platform for media downloads, audio conversion, and metadata extraction, including cloud delivery, security, and deployment.",
+    "details": [
+      {
+        "label": "Processing",
+        "description": "Extracted metadata and available formats, downloaded videos, and converted audio using yt-dlp and FFmpeg."
+      },
+      {
+        "label": "Background jobs",
+        "description": "Used Celery and Redis for processing, caching, and avoiding duplicate work."
+      },
+      {
+        "label": "Delivery",
+        "description": "Provided live updates through WebSockets and time-limited downloads from Amazon S3."
+      },
+      {
+        "label": "Security",
+        "description": "Implemented HMAC signing, TOTP verification, AWS Secrets Manager, and rate limiting."
+      },
+      {
+        "label": "Infrastructure",
+        "description": "Containerized deployment on AWS with load balancing, automatic scaling, health checks, and application and worker monitoring."
+      }
+    ],
     "role": "Freelance Software Engineer, Jan 2025 - Sep 2025.",
     "constraint": "Support media downloads, audio conversion, and metadata extraction while processing runs in the background.",
     "decision": "Set up background processing, cloud file storage, and reuse of previously processed files.",
@@ -331,19 +354,61 @@ export const projects: Project[] = [
     "technologies": [
       "Python",
       "FastAPI",
+      "Pydantic",
+      "yt-dlp",
+      "FFmpeg",
       "Celery",
       "Redis",
-      "S3",
-      "WebSockets"
+      "WebSockets",
+      "Amazon S3",
+      "aiobotocore",
+      "HMAC",
+      "TOTP/PyOTP",
+      "AWS Secrets Manager",
+      "Docker",
+      "Docker Compose",
+      "AWS EC2",
+      "AWS Load Balancing",
+      "AWS Auto Scaling",
+      "ElastiCache",
+      "Gunicorn",
+      "Uvicorn",
+      "Prometheus",
+      "Flower",
+      "Nginx",
+      "LocalStack",
+      "GitHub Container Registry"
     ],
     "stars": 0
   },
   {
     "label": "FREELANCE · SEP 2025–JAN 2026",
     "slug": "nt-zen",
-    "name": "Network Reliability Analyzer",
-    "summary": "RBD databases and network availability analysis for curative congestion management.",
-    "description": "Reliability block diagram (RBD) databases for curative congestion management in the SPM-SPS and MPM-C models.",
+    "name": "Network Reliability Analysis System",
+    "summary": "Network modeling, failure analysis, and availability comparisons for the SPM-SPS and MPM-C congestion management models.",
+    "description": "Developed a system for evaluating communication network reliability in the SPM-SPS and MPM-C congestion management models.",
+    "details": [
+      {
+        "label": "Data and modeling",
+        "description": "Built SQLite databases for network components, outage scenarios, and reliability block diagrams."
+      },
+      {
+        "label": "Failure analysis",
+        "description": "Identified component failure combinations that interrupt communication."
+      },
+      {
+        "label": "Routing",
+        "description": "Compared static routing with OSPF-style rerouting to evaluate alternative paths after failures."
+      },
+      {
+        "label": "Calculations",
+        "description": "Applied Kochs algebra to calculate availability across outage scenarios."
+      },
+      {
+        "label": "Results",
+        "description": "Generated network diagrams, availability comparisons, and exported analysis results."
+      }
+    ],
     "role": "Freelance Software Engineer, Sep 2025 - Jan 2026.",
     "constraint": "Evaluate all outage scenarios for both models and compare static and OSPF routing.",
     "decision": "Built reliability block diagram (RBD) databases for curative congestion management (SPM-SPS, MPM-C).",
@@ -354,31 +419,65 @@ export const projects: Project[] = [
     "status": "Freelance client work",
     "technologies": [
       "Python",
-      "SQLite",
       "SQL",
+      "SQLite",
       "NetworkX",
-      "Graph algorithms"
+      "Matplotlib",
+      "JSON",
+      "unittest"
     ],
     "stars": 0
   },
   {
     "slug": "location-based-ar",
-    "name": "Real estate AR platform",
+    "name": "Real Estate AR Platform",
     "summary": "A location-based augmented reality real estate platform.",
-    "description": "A location-based augmented reality real estate platform for iOS and Android.",
+    "description": "Built a location-based AR real estate app for iOS and Android.",
+    "details": [
+      {
+        "label": "Mobile",
+        "description": "Built with Flutter and Dart."
+      },
+      {
+        "label": "AR",
+        "description": "Unity and C#, using a modular framework for embedding Unity with bidirectional communication and lifecycle management."
+      },
+      {
+        "label": "Location",
+        "description": "Geolocation, Google Maps API, ARCore Extensions, and the Geospatial API."
+      },
+      {
+        "label": "Storage and services",
+        "description": "Hive, Firebase Remote Config, and Cloud Messaging."
+      },
+      {
+        "label": "Reliability",
+        "description": "AR initialization and tracking checks, platform-specific fixes, and Sentry for crash analytics and logs."
+      }
+    ],
     "role": "CTO & Lead Developer, Nov 2023 - Aug 2026; previously Mobile Engineer, Sep 2022 - Nov 2023.",
     "constraint": "Coordinate mobile, location-based AR, and backend integration work across iOS and Android.",
-    "decision": "Owned application architecture and technical decisions, defining how its core components communicate.",
-    "outcome": "Led mobile, location-based AR, and backend integration work; set development priorities. Managed native builds and tester releases.",
+    "decision": "Used a modular framework for embedding Unity with bidirectional communication and lifecycle management in the Flutter app.",
+    "outcome": "Led mobile, location-based AR, and backend integration work, including Firebase Remote Config and Cloud Messaging. Set development priorities and managed native builds and tester releases.",
     "reliability": "Resolved iOS and Android integration and reliability issues.",
     "language": "Flutter · Unity",
     "accent": "#7691FF",
     "status": "Professional work",
     "technologies": [
-      "Flutter",
+      "Dart",
+      "Flutter 3.x",
+      "BLoC",
       "Unity",
+      "C#",
       "ARCore",
-      "Geolocation"
+      "ARCore Extensions",
+      "Geospatial API",
+      "Geolocation",
+      "Google Maps API",
+      "Hive",
+      "Firebase Remote Config",
+      "Firebase Cloud Messaging",
+      "Sentry"
     ],
     "stars": 0,
     "label": "BROKERAGE & REIM · PROFESSIONAL WORK"
