@@ -59,11 +59,6 @@ export function ProjectsSection() {
                 {presentation.highlights.map(technology => <li key={technology}>{technology}</li>)}
               </ul>
               <Link className="project-case-link" href={`/work/${project.slug}`} aria-label={`Explore ${project.name}`}>Explore project <ArrowUpRight size={18} aria-hidden="true" /></Link>
-              {project.url ? (
-                <a className="project-external-link text-link" href={project.url} target="_blank" rel="noopener noreferrer">
-                  {project.urlLabel ?? "View project"} <ArrowUpRight size={16} aria-hidden="true" />
-                </a>
-              ) : null}
             </article>
           );
         })}
