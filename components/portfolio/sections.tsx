@@ -50,7 +50,7 @@ export function ProjectsSection() {
           return (
             <article className="project-card" key={project.slug} style={{ "--project-accent": project.accent } as CSSProperties}>
               <div className="project-card-top">
-                <span className="project-category"><i aria-hidden="true" />{presentation.category}</span>
+                <span className="project-category"><i aria-hidden="true" />{presentation.role}</span>
                 <span className="project-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
               </div>
               <h3>{project.name}</h3>

@@ -1,7 +1,7 @@
 import type { Project } from "./portfolio";
 
 type ProjectPresentation = {
-  category: string;
+  role: string;
   highlights: string[];
   period: string;
   groups: { label: string; technologies: string[] }[];
@@ -9,13 +9,13 @@ type ProjectPresentation = {
 
 const presentations: Record<string, ProjectPresentation> = {
   "video-downloader": {
-    category: "Mobile · Media & downloads",
+    role: "Software engineer",
     highlights: ["Android", "10M+ downloads", "Freelance"],
     period: "Freelance client work",
     groups: [],
   },
   mediahunter: {
-    category: "Backend & cloud",
+    role: "Software engineer",
     highlights: ["FastAPI", "Celery", "AWS"],
     period: "Jan – Sep 2025",
     groups: [
@@ -28,7 +28,7 @@ const presentations: Record<string, ProjectPresentation> = {
     ],
   },
   "nt-zen": {
-    category: "Network analysis",
+    role: "Software engineer",
     highlights: ["Python", "NetworkX", "SQLite"],
     period: "Sep 2025 – Jan 2026",
     groups: [
@@ -38,7 +38,7 @@ const presentations: Record<string, ProjectPresentation> = {
     ],
   },
   "location-based-ar": {
-    category: "Mobile & augmented reality",
+    role: "Mobile engineer",
     highlights: ["Flutter", "Unity", "ARCore"],
     period: "Sep 2022 – Aug 2026",
     groups: [
@@ -49,7 +49,7 @@ const presentations: Record<string, ProjectPresentation> = {
     ],
   },
   "homear-backend": {
-    category: "Backend systems",
+    role: "Software engineer",
     highlights: ["Node.js", "PostgreSQL", "Redis"],
     period: "Aug 2023 – Jan 2024",
     groups: [
@@ -65,7 +65,7 @@ const presentations: Record<string, ProjectPresentation> = {
 
 export function getProjectPresentation(project: Project) {
   const presentation = presentations[project.slug] ?? {
-    category: project.language,
+    role: "Software engineer",
     highlights: project.technologies.slice(0, 3),
     period: project.label,
     groups: [],
