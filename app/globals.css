@@ -123,13 +123,11 @@ button, summary { cursor: pointer; }
 .minimal-footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; border-top: 1px solid var(--border); padding-block: 28px; color: var(--quiet); font-family: var(--font-geist-mono); font-size: .65rem; }
 .minimal-footer > div { display: flex; gap: 24px; }
 .minimal-footer a:hover { color: var(--foreground); }
-.about-intro { padding-block: 40px 48px; }
-.about-intro-grid { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 48px; align-items: start; margin-top: 32px; }
-.about-page-heading h1 { margin: 0; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 550; letter-spacing: -.05em; }
+.about-intro-grid { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 48px; align-items: start; }
 .about-portrait { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border: 1px solid var(--border); border-radius: 7px; background: var(--surface); }
 .about-portrait img { object-fit: cover; }
 .about-prose { max-width: 740px; margin-top: 24px; color: var(--muted); line-height: 1.85; }
-.about-prose h2 { color: var(--foreground); font-size: 1rem; font-weight: 550; margin-top: 28px; }
+.about-prose h3 { color: var(--foreground); font-size: 1rem; font-weight: 550; margin-top: 28px; }
 .experience-row { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 28px; padding-block: 28px; border-bottom: 1px solid var(--border); }
 .experience-row:first-child { padding-top: 0; }
 .experience-row:last-child { border: 0; padding-bottom: 0; }
@@ -152,9 +150,6 @@ button, summary { cursor: pointer; }
 .minimal-skills { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 28px; }
 .minimal-skills h3 { font-size: .9rem; font-weight: 500; margin: 0; }
 .minimal-skills .simple-tags { margin-top: 14px; }
-.about-next { padding-block: 30px 60px; }
-.about-next h2 { font-size: 1.3rem; font-weight: 500; margin-bottom: 22px; }
-.about-next .text-link { margin-left: 24px; }
 
 @media (max-width: 760px) {
   .page-container, .site-header-inner, .minimal-footer { width: calc(100% - 40px); }

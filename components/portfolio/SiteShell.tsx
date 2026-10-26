@@ -3,7 +3,7 @@ import { BackgroundField } from "./BackgroundField";
 import type { ReactNode } from "react";
 import { profile } from "@/data/portfolio";
 
-export function SiteShell({ children, active = "home" }: { children: ReactNode; active?: "home" | "about" | "work" }) {
+export function SiteShell({ children, active = "home" }: { children: ReactNode; active?: "home" | "work" }) {
   return (
     <>
       {active === "work" ? null : <BackgroundField />}
