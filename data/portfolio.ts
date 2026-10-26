@@ -317,45 +317,120 @@ export const experience: Experience[] = [
 
 export const projects: Project[] = [
   {
-    "label": "FREELANCE · ANDROID APP",
-    "slug": "video-downloader",
-    "name": "Video Downloader - Video Saver",
-    "summary": "An Android app for downloading, organizing, and playing media offline, with 10M+ downloads on Google Play.",
-    "description": "Built an Android application as a freelancer for downloading, organizing, and playing media offline, combining an integrated browser, automatic video detection, and download management.",
+    "slug": "location-based-ar",
+    "name": "Real Estate AR Platform",
+    "summary": "A location-based real estate app for iOS and Android, combining Flutter and Unity to bring property discovery into augmented reality with maps and geospatial positioning.",
+    "description": "Built a location-based AR real estate app for iOS and Android.",
     "details": [
       {
-        "label": "Browser and media detection",
-        "description": "Integrated browsing and automatic video detection help users find and save media from supported websites."
+        "label": "Mobile",
+        "description": "Built with Flutter and Dart."
       },
       {
-        "label": "Download management",
-        "description": "Supports multiple downloads, pause and resume controls, and saving video, audio, and other media formats."
+        "label": "AR",
+        "description": "Unity and C#, using a modular framework for embedding Unity with bidirectional communication and lifecycle management."
       },
       {
-        "label": "Offline playback",
-        "description": "A built-in player lets users watch downloaded videos without an internet connection."
+        "label": "Location",
+        "description": "Geolocation, Google Maps API, ARCore Extensions, and the Geospatial API."
       },
       {
-        "label": "File management and privacy",
-        "description": "Includes file organization, sharing, and a password-protected private folder."
+        "label": "Storage and services",
+        "description": "Hive, Firebase Remote Config, and Cloud Messaging."
       },
       {
-        "label": "Product reach",
-        "description": "Published on Google Play, where the listing shows 10M+ downloads as of October 2026."
+        "label": "Reliability",
+        "description": "AR initialization and tracking checks, platform-specific fixes, and Sentry for crash analytics and logs."
       }
     ],
-    "role": "Freelance Software Engineer.",
-    "constraint": "Support media downloading, organization, and offline playback in an Android application.",
-    "decision": "Combined an integrated browser, automatic video detection, download management, and offline playback.",
-    "outcome": "Published Android app with 10M+ downloads on Google Play as of October 2026.",
-    "reliability": "Download controls include pause and resume support.",
-    "language": "Android",
-    "accent": "#c8f56a",
-    "status": "Freelance client work",
-    "technologies": [],
+    "role": "CTO & Lead Developer, Nov 2023 - Aug 2026; previously Mobile Engineer, Sep 2022 - Nov 2023.",
+    "constraint": "Coordinate mobile, location-based AR, and backend integration work across iOS and Android.",
+    "decision": "Used a modular framework for embedding Unity with bidirectional communication and lifecycle management in the Flutter app.",
+    "outcome": "Led mobile, location-based AR, and backend integration work, including Firebase Remote Config and Cloud Messaging. Set development priorities and managed native builds and tester releases.",
+    "reliability": "Resolved iOS and Android integration and reliability issues.",
+    "language": "Flutter · Unity",
+    "accent": "#7691FF",
+    "status": "Professional work",
+    "technologies": [
+      "Dart",
+      "Flutter 3.x",
+      "BLoC",
+      "Unity",
+      "C#",
+      "ARCore",
+      "ARCore Extensions",
+      "Geospatial API",
+      "Geolocation",
+      "Google Maps API",
+      "Hive",
+      "Firebase Remote Config",
+      "Firebase Cloud Messaging",
+      "Sentry"
+    ],
     "stars": 0,
-    "url": "https://play.google.com/store/apps/details?id=com.vanced.video.downloader&hl=en",
-    "urlLabel": "View on Google Play"
+    "label": "BROKERAGE & REIM · PROFESSIONAL WORK"
+  },
+  {
+    "label": "BROKERAGE & REIM · PROFESSIONAL WORK",
+    "slug": "homear-backend",
+    "name": "HomeAR Real Estate Backend",
+    "summary": "Backend supporting a location-based AR real-estate application, with property management, proximity search, agency accounts, and real-time notifications.",
+    "description": "Developed the backend supporting HomeAR’s location-based AR application. Organized the system into client and administration APIs, with PostgreSQL for property data and matching logic, and Redis and Socket.IO for real-time notifications.",
+    "details": [
+      {
+        "label": "Property management",
+        "description": "Managed apartments, houses, offices, shops, and parking listings, including pricing, availability, property-specific attributes, amenities, photos, videos, and floor plans."
+      },
+      {
+        "label": "Geographic discovery",
+        "description": "Implemented proximity filtering and distance sorting using custom PostgreSQL calculations. Exposed property coordinates, altitude, and GeoJSON data for location-based discovery."
+      },
+      {
+        "label": "Agency operations",
+        "description": "Supported individual sellers, agency accounts, agent subaccounts, activation controls, contact visibility, and listing transfers between agents."
+      },
+      {
+        "label": "Matching and notifications",
+        "description": "Matched saved property searches using PostgreSQL views. Added price-drop subscriptions, persisted notifications, and real-time delivery through Redis Pub/Sub and Socket.IO."
+      },
+      {
+        "label": "Moderation and enrichment",
+        "description": "Implemented administration endpoints for listing review, status changes, deletion, and amenity management. Integrated optional Google Places and walking-distance enrichment."
+      },
+      {
+        "label": "Deployment and documentation",
+        "description": "Containerized the APIs and supporting services with Docker Compose. Supplied database initialization scripts and Postman request collections."
+      }
+    ],
+    "role": "Backend development, Aug 2023 - Jan 2024.",
+    "constraint": "Support property publishing, geographic discovery, and agency operations while supplying property data to the mobile AR application.",
+    "decision": "Separated client and administration APIs, centralized shared business logic in PostgreSQL views and triggers, and connected notification flows through Redis and Socket.IO.",
+    "reliability": "Added input validation, seller ownership checks, revocable sessions, and persisted notification records.",
+    "outcome": "A backend supporting property publishing, nearby-property discovery, agency management, saved-search matching, and price-drop notifications.",
+    "language": "TypeScript",
+    "accent": "#58C6C1",
+    "status": "Professional work",
+    "technologies": [
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "REST APIs",
+      "PostgreSQL",
+      "SQL views and triggers",
+      "JSON/JSONB",
+      "Redis",
+      "Socket.IO",
+      "GeoJSON",
+      "Google Places API",
+      "Distance Matrix API",
+      "JWT",
+      "Nodemailer",
+      "SMTP",
+      "Docker",
+      "Docker Compose",
+      "Postman"
+    ],
+    "stars": 0
   },
   {
     "label": "FREELANCE · JAN–SEP 2025",
@@ -424,6 +499,47 @@ export const projects: Project[] = [
     "stars": 0
   },
   {
+    "label": "FREELANCE · ANDROID APP",
+    "slug": "video-downloader",
+    "name": "Video Downloader - Video Saver",
+    "summary": "An Android app for downloading, organizing, and playing media offline, with 10M+ downloads on Google Play.",
+    "description": "Built an Android application as a freelancer for downloading, organizing, and playing media offline, combining an integrated browser, automatic video detection, and download management.",
+    "details": [
+      {
+        "label": "Browser and media detection",
+        "description": "Integrated browsing and automatic video detection help users find and save media from supported websites."
+      },
+      {
+        "label": "Download management",
+        "description": "Supports multiple downloads, pause and resume controls, and saving video, audio, and other media formats."
+      },
+      {
+        "label": "Offline playback",
+        "description": "A built-in player lets users watch downloaded videos without an internet connection."
+      },
+      {
+        "label": "File management and privacy",
+        "description": "Includes file organization, sharing, and a password-protected private folder."
+      },
+      {
+        "label": "Product reach",
+        "description": "Published on Google Play, where the listing shows 10M+ downloads as of October 2026."
+      }
+    ],
+    "role": "Freelance Software Engineer.",
+    "constraint": "Support media downloading, organization, and offline playback in an Android application.",
+    "decision": "Combined an integrated browser, automatic video detection, download management, and offline playback.",
+    "outcome": "Published Android app with 10M+ downloads on Google Play as of October 2026.",
+    "reliability": "Download controls include pause and resume support.",
+    "language": "Android",
+    "accent": "#c8f56a",
+    "status": "Freelance client work",
+    "technologies": [],
+    "stars": 0,
+    "url": "https://play.google.com/store/apps/details?id=com.vanced.video.downloader&hl=en",
+    "urlLabel": "View on Google Play"
+  },
+  {
     "label": "FREELANCE · SEP 2025–JAN 2026",
     "slug": "nt-zen",
     "name": "Network Reliability Analysis System",
@@ -467,122 +583,6 @@ export const projects: Project[] = [
       "Matplotlib",
       "JSON",
       "unittest"
-    ],
-    "stars": 0
-  },
-  {
-    "slug": "location-based-ar",
-    "name": "Real Estate AR Platform",
-    "summary": "A location-based augmented reality real estate platform.",
-    "description": "Built a location-based AR real estate app for iOS and Android.",
-    "details": [
-      {
-        "label": "Mobile",
-        "description": "Built with Flutter and Dart."
-      },
-      {
-        "label": "AR",
-        "description": "Unity and C#, using a modular framework for embedding Unity with bidirectional communication and lifecycle management."
-      },
-      {
-        "label": "Location",
-        "description": "Geolocation, Google Maps API, ARCore Extensions, and the Geospatial API."
-      },
-      {
-        "label": "Storage and services",
-        "description": "Hive, Firebase Remote Config, and Cloud Messaging."
-      },
-      {
-        "label": "Reliability",
-        "description": "AR initialization and tracking checks, platform-specific fixes, and Sentry for crash analytics and logs."
-      }
-    ],
-    "role": "CTO & Lead Developer, Nov 2023 - Aug 2026; previously Mobile Engineer, Sep 2022 - Nov 2023.",
-    "constraint": "Coordinate mobile, location-based AR, and backend integration work across iOS and Android.",
-    "decision": "Used a modular framework for embedding Unity with bidirectional communication and lifecycle management in the Flutter app.",
-    "outcome": "Led mobile, location-based AR, and backend integration work, including Firebase Remote Config and Cloud Messaging. Set development priorities and managed native builds and tester releases.",
-    "reliability": "Resolved iOS and Android integration and reliability issues.",
-    "language": "Flutter · Unity",
-    "accent": "#7691FF",
-    "status": "Professional work",
-    "technologies": [
-      "Dart",
-      "Flutter 3.x",
-      "BLoC",
-      "Unity",
-      "C#",
-      "ARCore",
-      "ARCore Extensions",
-      "Geospatial API",
-      "Geolocation",
-      "Google Maps API",
-      "Hive",
-      "Firebase Remote Config",
-      "Firebase Cloud Messaging",
-      "Sentry"
-    ],
-    "stars": 0,
-    "label": "BROKERAGE & REIM · PROFESSIONAL WORK"
-  },
-  {
-    "label": "BROKERAGE & REIM · PROFESSIONAL WORK",
-    "slug": "homear-backend",
-    "name": "HomeAR — Real Estate Backend",
-    "summary": "Backend supporting a location-based AR real-estate application, with property management, proximity search, agency accounts, and real-time notifications.",
-    "description": "Developed the backend supporting HomeAR’s location-based AR application. Organized the system into client and administration APIs, with PostgreSQL for property data and matching logic, and Redis and Socket.IO for real-time notifications.",
-    "details": [
-      {
-        "label": "Property management",
-        "description": "Managed apartments, houses, offices, shops, and parking listings, including pricing, availability, property-specific attributes, amenities, photos, videos, and floor plans."
-      },
-      {
-        "label": "Geographic discovery",
-        "description": "Implemented proximity filtering and distance sorting using custom PostgreSQL calculations. Exposed property coordinates, altitude, and GeoJSON data for location-based discovery."
-      },
-      {
-        "label": "Agency operations",
-        "description": "Supported individual sellers, agency accounts, agent subaccounts, activation controls, contact visibility, and listing transfers between agents."
-      },
-      {
-        "label": "Matching and notifications",
-        "description": "Matched saved property searches using PostgreSQL views. Added price-drop subscriptions, persisted notifications, and real-time delivery through Redis Pub/Sub and Socket.IO."
-      },
-      {
-        "label": "Moderation and enrichment",
-        "description": "Implemented administration endpoints for listing review, status changes, deletion, and amenity management. Integrated optional Google Places and walking-distance enrichment."
-      },
-      {
-        "label": "Deployment and documentation",
-        "description": "Containerized the APIs and supporting services with Docker Compose. Supplied database initialization scripts and Postman request collections."
-      }
-    ],
-    "role": "Backend development, Aug 2023 - Jan 2024.",
-    "constraint": "Support property publishing, geographic discovery, and agency operations while supplying property data to the mobile AR application.",
-    "decision": "Separated client and administration APIs, centralized shared business logic in PostgreSQL views and triggers, and connected notification flows through Redis and Socket.IO.",
-    "reliability": "Added input validation, seller ownership checks, revocable sessions, and persisted notification records.",
-    "outcome": "A backend supporting property publishing, nearby-property discovery, agency management, saved-search matching, and price-drop notifications.",
-    "language": "TypeScript",
-    "accent": "#58C6C1",
-    "status": "Professional work",
-    "technologies": [
-      "TypeScript",
-      "Node.js",
-      "Express",
-      "REST APIs",
-      "PostgreSQL",
-      "SQL views and triggers",
-      "JSON/JSONB",
-      "Redis",
-      "Socket.IO",
-      "GeoJSON",
-      "Google Places API",
-      "Distance Matrix API",
-      "JWT",
-      "Nodemailer",
-      "SMTP",
-      "Docker",
-      "Docker Compose",
-      "Postman"
     ],
     "stars": 0
   }
