@@ -1,5 +1,4 @@
 import {
-  AboutSection,
   ContactSection,
   EducationSection,
   ExperienceSection,
@@ -14,7 +13,6 @@ export default function Home() {
     <SiteShell>
       <HeroSection />
       <ProjectsSection />
-      <AboutSection />
       <ExperienceSection />
       <EducationSection />
       <SkillsSection />
