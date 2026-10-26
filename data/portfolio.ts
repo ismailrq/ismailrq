@@ -481,6 +481,68 @@ export const projects: Project[] = [
     ],
     "stars": 0,
     "label": "BROKERAGE & REIM · PROFESSIONAL WORK"
+  },
+  {
+    "label": "BROKERAGE & REIM · PROFESSIONAL WORK",
+    "slug": "homear-backend",
+    "name": "HomeAR — Real Estate Backend",
+    "summary": "Backend supporting a location-based AR real-estate application, with property management, proximity search, agency accounts, and real-time notifications.",
+    "description": "Developed the backend supporting HomeAR’s location-based AR application. Organized the system into client and administration APIs, with PostgreSQL for property data and matching logic, and Redis and Socket.IO for real-time notifications.",
+    "details": [
+      {
+        "label": "Property management",
+        "description": "Managed apartments, houses, offices, shops, and parking listings, including pricing, availability, property-specific attributes, amenities, photos, videos, and floor plans."
+      },
+      {
+        "label": "Geographic discovery",
+        "description": "Implemented proximity filtering and distance sorting using custom PostgreSQL calculations. Exposed property coordinates, altitude, and GeoJSON data for location-based discovery."
+      },
+      {
+        "label": "Agency operations",
+        "description": "Supported individual sellers, agency accounts, agent subaccounts, activation controls, contact visibility, and listing transfers between agents."
+      },
+      {
+        "label": "Matching and notifications",
+        "description": "Matched saved property searches using PostgreSQL views. Added price-drop subscriptions, persisted notifications, and real-time delivery through Redis Pub/Sub and Socket.IO."
+      },
+      {
+        "label": "Moderation and enrichment",
+        "description": "Implemented administration endpoints for listing review, status changes, deletion, and amenity management. Integrated optional Google Places and walking-distance enrichment."
+      },
+      {
+        "label": "Deployment and documentation",
+        "description": "Containerized the APIs and supporting services with Docker Compose. Supplied database initialization scripts and Postman request collections."
+      }
+    ],
+    "role": "Backend development, Aug 2023 - Jan 2024.",
+    "constraint": "Support property publishing, geographic discovery, and agency operations while supplying property data to the mobile AR application.",
+    "decision": "Separated client and administration APIs, centralized shared business logic in PostgreSQL views and triggers, and connected notification flows through Redis and Socket.IO.",
+    "reliability": "Added input validation, seller ownership checks, revocable sessions, and persisted notification records.",
+    "outcome": "A backend supporting property publishing, nearby-property discovery, agency management, saved-search matching, and price-drop notifications.",
+    "language": "TypeScript",
+    "accent": "#58C6C1",
+    "status": "Professional work",
+    "technologies": [
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "REST APIs",
+      "PostgreSQL",
+      "SQL views and triggers",
+      "JSON/JSONB",
+      "Redis",
+      "Socket.IO",
+      "GeoJSON",
+      "Google Places API",
+      "Distance Matrix API",
+      "JWT",
+      "Nodemailer",
+      "SMTP",
+      "Docker",
+      "Docker Compose",
+      "Postman"
+    ],
+    "stars": 0
   }
 ];
 

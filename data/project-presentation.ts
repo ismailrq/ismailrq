@@ -42,6 +42,19 @@ const presentations: Record<string, ProjectPresentation> = {
       { label: "Monitoring", technologies: ["Sentry"] },
     ],
   },
+  "homear-backend": {
+    category: "Backend systems",
+    highlights: ["Node.js", "PostgreSQL", "Redis"],
+    period: "Aug 2023 – Jan 2024",
+    groups: [
+      { label: "Application", technologies: ["TypeScript", "Node.js", "Express", "REST APIs"] },
+      { label: "Data", technologies: ["PostgreSQL", "SQL views and triggers", "JSON/JSONB"] },
+      { label: "Messaging", technologies: ["Redis", "Socket.IO"] },
+      { label: "Location", technologies: ["GeoJSON", "Google Places API", "Distance Matrix API"] },
+      { label: "Authentication & email", technologies: ["JWT", "Nodemailer", "SMTP"] },
+      { label: "Deployment & tooling", technologies: ["Docker", "Docker Compose", "Postman"] },
+    ],
+  },
 };
 
 export function getProjectPresentation(project: Project) {
