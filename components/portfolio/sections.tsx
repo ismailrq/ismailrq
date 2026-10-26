@@ -1,8 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { CSSProperties } from "react";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { ContactForm } from "./ContactForm";
 import { experience, profile, projects, skillCategories, skills, socials } from "@/data/portfolio";
+import { getProjectPresentation } from "@/data/project-presentation";
 
 export function HeroSection() {
   return (
@@ -41,16 +43,26 @@ export function ProjectsSection() {
   return (
     <section className="landing-section page-container" id="projects" aria-labelledby="projects-title">
       <div className="minimal-section-heading"><p className="terminal-eyebrow">01 / SELECTED WORK</p><h2 id="projects-title">Architecture in practice.</h2></div>
-      <div className="projects-grid">{projects.map(project => (
-        <article className="project-card" key={project.slug}>
-          <div>
-            <span className="project-label">{project.label}</span>
-            <h3>{project.name}</h3><p>{project.summary}</p>
-          </div>
-          <ul className="simple-tags" aria-label={`${project.name} technologies`}>{project.technologies.map(tech => <li key={tech}>{tech}</li>)}</ul>
-          <Link className="project-case-link" href={`/work/${project.slug}`} aria-label={`View ${project.name} case study`}>View case study <ArrowUpRight size={16} aria-hidden="true" /></Link>
-        </article>
-      ))}</div>
+      <div className="projects-grid">
+        {projects.map((project, index) => {
+          const presentation = getProjectPresentation(project);
+
+          return (
+            <article className="project-card" key={project.slug} style={{ "--project-accent": project.accent } as CSSProperties}>
+              <div className="project-card-top">
+                <span className="project-category"><i aria-hidden="true" />{presentation.category}</span>
+                <span className="project-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+              </div>
+              <h3>{project.name}</h3>
+              <p>{project.summary}</p>
+              <ul className="project-highlights" aria-label={`${project.name} core technologies`}>
+                {presentation.highlights.map(technology => <li key={technology}>{technology}</li>)}
+              </ul>
+              <Link className="project-case-link" href={`/work/${project.slug}`} aria-label={`Explore ${project.name}`}>Explore project <ArrowUpRight size={18} aria-hidden="true" /></Link>
+            </article>
+          );
+        })}
+      </div>
     </section>
   );
 }
