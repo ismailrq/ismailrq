@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { SiteShell } from "@/components/portfolio/SiteShell";
 import { projects } from "@/data/portfolio";
 import { getProjectPresentation } from "@/data/project-presentation";
@@ -37,6 +37,11 @@ export default async function ProjectPage({ params }: Props) {
           <h1 id="project-title">{project.name}</h1>
           <p className="project-description">{project.description}</p>
           <p className="project-byline">{project.role}{project.status === "Professional work" ? <span>{project.label.split(" · ")[0]}</span> : null}</p>
+          {project.url ? (
+            <a className="project-external-link text-link" href={project.url} target="_blank" rel="noopener noreferrer">
+              {project.urlLabel ?? "View project"} <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
+          ) : null}
         </header>
 
         <div className="project-details">
@@ -48,7 +53,7 @@ export default async function ProjectPage({ params }: Props) {
           ))}
         </div>
 
-        <section className="project-technologies" aria-labelledby="project-technologies-title">
+        {presentation.groups.length > 0 ? <section className="project-technologies" aria-labelledby="project-technologies-title">
           <h2 id="project-technologies-title">Technologies</h2>
           <dl>
             {presentation.groups.map(group => (
@@ -58,7 +63,7 @@ export default async function ProjectPage({ params }: Props) {
               </div>
             ))}
           </dl>
-        </section>
+        </section> : null}
 
         <nav className="project-navigation" aria-label="More projects">
           <Link className="text-link" href="/#projects"><ArrowLeft size={16} aria-hidden="true" /> All projects</Link>

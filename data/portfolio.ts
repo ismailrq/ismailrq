@@ -60,6 +60,7 @@ export type Project = {
   technologies: string[];
   stars: number;
   url?: string;
+  urlLabel?: string;
 };
 
 export type SocialLink = {
@@ -315,6 +316,47 @@ export const experience: Experience[] = [
 ];
 
 export const projects: Project[] = [
+  {
+    "label": "FREELANCE · ANDROID APP",
+    "slug": "video-downloader",
+    "name": "Video Downloader - Video Saver",
+    "summary": "An Android app for downloading, organizing, and playing media offline, with 10M+ downloads on Google Play.",
+    "description": "Built an Android application as a freelancer for downloading, organizing, and playing media offline, combining an integrated browser, automatic video detection, and download management.",
+    "details": [
+      {
+        "label": "Browser and media detection",
+        "description": "Integrated browsing and automatic video detection help users find and save media from supported websites."
+      },
+      {
+        "label": "Download management",
+        "description": "Supports multiple downloads, pause and resume controls, and saving video, audio, and other media formats."
+      },
+      {
+        "label": "Offline playback",
+        "description": "A built-in player lets users watch downloaded videos without an internet connection."
+      },
+      {
+        "label": "File management and privacy",
+        "description": "Includes file organization, sharing, and a password-protected private folder."
+      },
+      {
+        "label": "Product reach",
+        "description": "Published on Google Play, where the listing shows 10M+ downloads as of October 2026."
+      }
+    ],
+    "role": "Freelance Software Engineer.",
+    "constraint": "Support media downloading, organization, and offline playback in an Android application.",
+    "decision": "Combined an integrated browser, automatic video detection, download management, and offline playback.",
+    "outcome": "Published Android app with 10M+ downloads on Google Play as of October 2026.",
+    "reliability": "Download controls include pause and resume support.",
+    "language": "Android",
+    "accent": "#c8f56a",
+    "status": "Freelance client work",
+    "technologies": [],
+    "stars": 0,
+    "url": "https://play.google.com/store/apps/details?id=com.vanced.video.downloader&hl=en",
+    "urlLabel": "View on Google Play"
+  },
   {
     "label": "FREELANCE · JAN–SEP 2025",
     "slug": "mediahunter",

@@ -8,6 +8,12 @@ type ProjectPresentation = {
 };
 
 const presentations: Record<string, ProjectPresentation> = {
+  "video-downloader": {
+    category: "Mobile · Media & downloads",
+    highlights: ["Android", "10M+ downloads", "Freelance"],
+    period: "Freelance client work",
+    groups: [],
+  },
   mediahunter: {
     category: "Backend & cloud",
     highlights: ["FastAPI", "Celery", "AWS"],

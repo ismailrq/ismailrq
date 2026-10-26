@@ -79,6 +79,7 @@ button, summary { cursor: pointer; }
 .project-case-link::after { position: absolute; content: ""; inset: 0; }
 .project-case-link svg { color: var(--project-accent, var(--cobalt)); transition: transform 180ms ease; }
 .project-case-link:hover svg { transform: translate(2px, -2px); }
+.project-external-link { position: relative; z-index: 1; align-self: flex-start; min-height: 44px; margin-top: 10px; }
 .simple-tags { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 20px 0 0; list-style: none; }
 .simple-tags li { border: 1px solid var(--border); background: rgba(255,255,255,.015); padding: 5px 9px; border-radius: 4px; font-family: var(--font-geist-mono); color: var(--muted); font-size: .65rem; line-height: 1.5; }
 .project-page.page-container { max-width: 740px; padding-block: 28px 48px; }
