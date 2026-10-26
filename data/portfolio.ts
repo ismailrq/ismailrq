@@ -585,6 +585,65 @@ export const projects: Project[] = [
       "unittest"
     ],
     "stars": 0
+  },
+  {
+    "label": "INDEPENDENT PRODUCT · SAAS",
+    "slug": "ultralogin",
+    "name": "UltraLogin",
+    "summary": "A browser profile management platform with isolated sessions, configurable browser environments, proxy integrations, and device-bound licensing.",
+    "description": "Developed a desktop application for managing isolated Chromium profiles, with local data storage and a backend for authentication, access control, and licensing.",
+    "details": [
+      {
+        "label": "Profile management",
+        "description": "Implemented separate browser profiles with persistent cookies, sessions, and local storage. Added groups, tags, notes, and bulk CSV imports."
+      },
+      {
+        "label": "Browser runtime",
+        "description": "Built a custom Chromium runtime controller using Playwright and the Chrome DevTools Protocol, with configurable browser fingerprints, locales, timezones, and profile lifecycle management."
+      },
+      {
+        "label": "Proxy integrations",
+        "description": "Added per-profile proxy configuration, connectivity testing, and integrations with Webshare and IPRoyal."
+      },
+      {
+        "label": "Storage and security",
+        "description": "Used SQLite for local profile and proxy records, with encrypted credentials and separate browser data directories for each profile."
+      },
+      {
+        "label": "Authentication and licensing",
+        "description": "Built a Fastify and PostgreSQL backend supporting Google OpenID Connect, administrator approval, and device-bound license activation, refresh, and deactivation."
+      },
+      {
+        "label": "Reliability",
+        "description": "Added browser process monitoring, runtime diagnostics, input validation, and automated tests for desktop services and licensing flows."
+      }
+    ],
+    "role": "Full-stack engineer.",
+    "constraint": "Manage separate browser environments and proxy credentials while enforcing account access and device-bound licensing.",
+    "decision": "Combined an Electron desktop application and local SQLite storage with a custom Chromium runtime controller and a Fastify and PostgreSQL authentication and licensing backend.",
+    "outcome": "A desktop platform for organizing browser profiles, managing proxies, and controlling licensed access from one application.",
+    "reliability": "Added browser process monitoring, runtime diagnostics, input validation, and automated tests for desktop services and licensing flows.",
+    "language": "TypeScript",
+    "accent": "#58C6C1",
+    "status": "Independent SaaS",
+    "technologies": [
+      "TypeScript",
+      "Electron",
+      "React",
+      "Tailwind CSS",
+      "Chromium",
+      "Playwright",
+      "Chrome DevTools Protocol",
+      "SQLite",
+      "PostgreSQL",
+      "Node.js",
+      "Fastify",
+      "Google OpenID Connect",
+      "Signed license tokens",
+      "Vitest",
+      "Sentry"
+    ],
+    "stars": 0
   }
 ];
 

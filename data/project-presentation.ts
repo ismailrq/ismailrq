@@ -8,6 +8,18 @@ type ProjectPresentation = {
 };
 
 const presentations: Record<string, ProjectPresentation> = {
+  ultralogin: {
+    role: "Full-stack engineer",
+    highlights: ["Electron", "React", "TypeScript"],
+    period: "Independent SaaS",
+    groups: [
+      { label: "Desktop", technologies: ["TypeScript", "Electron", "React", "Tailwind CSS"] },
+      { label: "Browser runtime", technologies: ["Chromium", "Playwright", "Chrome DevTools Protocol"] },
+      { label: "Data", technologies: ["SQLite", "PostgreSQL"] },
+      { label: "Backend and authentication", technologies: ["Node.js", "Fastify", "Google OpenID Connect", "Signed license tokens"] },
+      { label: "Testing and monitoring", technologies: ["Vitest", "Sentry"] },
+    ],
+  },
   "video-downloader": {
     role: "Software engineer",
     highlights: ["Android", "10M+ downloads", "Freelance"],
