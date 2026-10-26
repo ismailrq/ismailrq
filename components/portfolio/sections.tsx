@@ -7,59 +7,63 @@ import { experience, profile, projects, skillCategories, skills, socials } from 
 import { getProjectPresentation } from "@/data/project-presentation";
 
 export function HeroSection() {
+  const roleWords = profile.role.split(" ");
+  const country = profile.location.split(",").at(-1)?.trim();
+
   return (
     <section className="landing-intro page-container" id="home" aria-labelledby="intro-title">
-      <aside className="profile-card" aria-label="Profile summary">
+      <aside className="profile-card" aria-label="Portrait">
         <div className="profile-portrait-stage">
           <Image
             className="profile-portrait"
             src="/images/ismail-raqi-deep-blue.png"
             alt="Portrait of Ismail Raqi"
             fill
-            sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1000px) 280px, 320px"
+            sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1000px) 300px, 360px"
             preload
           />
         </div>
-        <div className="profile-card-body">
-          <h2>{profile.name}</h2>
-          <p className="profile-card-meta">
-            <span className="profile-card-role">{profile.role}</span>
-            <span aria-hidden="true">·</span>
-            <span>{profile.location}</span>
-          </p>
-        </div>
       </aside>
       <div className="landing-copy" id="about">
-        <h1 id="intro-title">From architecture<br /><span>to delivery.<span className="terminal-caret headline-caret" aria-hidden="true" /></span></h1>
-        <p className="landing-summary">I’m a software engineer focused on application architecture, technical leadership, and product delivery. I keep solutions clear, communication straightforward, and software built to last.</p>
-        <nav className="hero-socials" aria-label="Connect with Ismail">
-          {socials.filter(social => social.url && (social.label === "GitHub" || social.label === "LinkedIn")).map(social => (
-            <a
-              className={`hero-social-link hero-social-${social.label.toLowerCase()}`}
-              key={social.label}
-              href={social.url}
-              aria-label={`${social.label} profile`}
-              title={social.label}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {social.label === "GitHub" ? (
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M9 19c-4.3 1.3-4.3-2.5-6-3m12 6v-3.9a3.4 3.4 0 0 0-.9-2.6c3-.3 6.2-1.5 6.2-6.8a5.3 5.3 0 0 0-1.5-3.7A4.9 4.9 0 0 0 18.7 1S17.5.7 15 2.5a12.8 12.8 0 0 0-6 0C6.5.7 5.3 1 5.3 1a4.9 4.9 0 0 0-.1 4A5.3 5.3 0 0 0 3.7 8.7c0 5.3 3.2 6.5 6.2 6.8a3.4 3.4 0 0 0-.9 2.6V22" />
-                </svg>
-              ) : (
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v2a6 6 0 0 1 2-3Z" />
-                  <rect x="2" y="9" width="4" height="12" />
-                  <circle cx="4" cy="4" r="2" />
-                </svg>
-              )}
+        <h1 className="hero-title" id="intro-title" aria-label={profile.role}>
+          {roleWords.map((word, index) => <span key={`${word}-${index}`}>{word}</span>)}
+        </h1>
+        <p className="landing-summary">I build reliable software, from architecture to delivery, across mobile apps and backend systems. I turn complex requirements into maintainable solutions, make technical decisions clear, and keep communication straightforward. From the first design decision to release, I take ownership of the work.</p>
+        <div className="hero-details">
+          <dl className="hero-facts">
+            <div><dt>Based in</dt><dd>{country}</dd></div>
+            <div><dt>Availability</dt><dd>Open to work</dd></div>
+            <div><dt>Experience</dt><dd>4+ years</dd></div>
+          </dl>
+          <nav className="hero-socials" aria-label="Connect with Ismail">
+            {socials.filter(social => social.url && (social.label === "GitHub" || social.label === "LinkedIn")).map(social => (
+              <a
+                className={`hero-social-link hero-social-${social.label.toLowerCase()}`}
+                key={social.label}
+                href={social.url}
+                aria-label={`${social.label} profile`}
+                title={social.label}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {social.label === "GitHub" ? (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M9 19c-4.3 1.3-4.3-2.5-6-3m12 6v-3.9a3.4 3.4 0 0 0-.9-2.6c3-.3 6.2-1.5 6.2-6.8a5.3 5.3 0 0 0-1.5-3.7A4.9 4.9 0 0 0 18.7 1S17.5.7 15 2.5a12.8 12.8 0 0 0-6 0C6.5.7 5.3 1 5.3 1a4.9 4.9 0 0 0-.1 4A5.3 5.3 0 0 0 3.7 8.7c0 5.3 3.2 6.5 6.2 6.8a3.4 3.4 0 0 0-.9 2.6V22" />
+                  </svg>
+                ) : (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v2a6 6 0 0 1 2-3Z" />
+                    <rect x="2" y="9" width="4" height="12" />
+                    <circle cx="4" cy="4" r="2" />
+                  </svg>
+                )}
+              </a>
+            ))}
+            <a className="hero-social-link hero-social-email" href={`mailto:${profile.email}`} aria-label="Email Ismail" title="Email">
+              <Mail size={18} strokeWidth={1.7} aria-hidden="true" />
             </a>
-          ))}
-          <a className="hero-social-link hero-social-email" href={`mailto:${profile.email}`} aria-label="Email Ismail" title="Email">
-            <Mail size={22} strokeWidth={1.7} aria-hidden="true" />
-          </a>
-        </nav>
+          </nav>
+        </div>
       </div>
     </section>
   );
