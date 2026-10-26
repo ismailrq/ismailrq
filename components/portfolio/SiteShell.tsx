@@ -6,7 +6,7 @@ import { profile } from "@/data/portfolio";
 export function SiteShell({ children, active = "home" }: { children: ReactNode; active?: "home" | "about" | "work" }) {
   return (
     <>
-      <BackgroundField />
+      {active === "work" ? null : <BackgroundField />}
       <a className="skip-link" href="#main-content">Skip to main content</a>
       <SiteHeader page={active} />
       <main id="main-content" className="site-main">{children}</main>
