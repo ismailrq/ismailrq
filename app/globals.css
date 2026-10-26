@@ -206,17 +206,17 @@ button, summary { cursor: pointer; }
 
 
 .profile-card { min-width: 0; overflow: hidden; border: 1px solid var(--border); border-radius: 7px; background: rgba(23,27,34,.94); box-shadow: 0 16px 50px rgba(0,0,0,.16); }
-.profile-portrait-stage { position: relative; height: 280px; overflow: hidden; border-bottom: 1px solid var(--border); background: radial-gradient(ellipse at 50% 100%, rgba(95,115,207,.2), transparent 70%); }
-.profile-portrait { object-fit: contain; object-position: center bottom; padding: 14px 18px 0; }
-.profile-card-body { padding: 20px 22px; }
-.profile-card h2 { margin: 0; font-size: 1.15rem; font-weight: 550; letter-spacing: -.025em; }
-.profile-card-role { margin: 5px 0 0; color: var(--cobalt); font-size: .7rem; }
-.profile-card-location { margin: 8px 0 0; font-size: .7rem; color: var(--muted); }
+.profile-portrait-stage { position: relative; aspect-ratio: 4 / 3; overflow: hidden; border-bottom: 1px solid var(--border); background: radial-gradient(ellipse at 50% 100%, rgba(95,115,207,.2), transparent 70%); }
+.profile-portrait { object-fit: cover; object-position: center top; }
+.profile-card-body { padding: 14px 16px; }
+.profile-card h2 { margin: 0; font-size: 1.05rem; font-weight: 550; letter-spacing: -.025em; }
+.profile-card-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 5px 0 0; color: var(--muted); font-size: .7rem; line-height: 1.5; }
+.profile-card-meta > span { white-space: nowrap; }
+.profile-card-role { color: var(--cobalt); }
 
 @media (min-width: 761px) and (max-width: 1000px) {
   .landing-intro { grid-template-columns: 280px minmax(0, 1fr); gap: 28px; }
   .landing-intro h1 { font-size: 2.3rem; }
-  .profile-card-body { padding: 18px; }
 }
 
 @media (max-width: 760px) {

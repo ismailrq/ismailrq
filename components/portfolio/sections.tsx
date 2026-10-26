@@ -22,8 +22,11 @@ export function HeroSection() {
         </div>
         <div className="profile-card-body">
           <h2>{profile.name}</h2>
-          <p className="profile-card-role">{profile.role}</p>
-          <p className="profile-card-location">{profile.location}</p>
+          <p className="profile-card-meta">
+            <span className="profile-card-role">{profile.role}</span>
+            <span aria-hidden="true">·</span>
+            <span>{profile.location}</span>
+          </p>
         </div>
       </aside>
       <div className="landing-copy" id="about">
