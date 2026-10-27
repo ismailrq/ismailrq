@@ -9,7 +9,7 @@ type ProjectPresentation = {
 
 const presentations: Record<string, ProjectPresentation> = {
   ultralogin: {
-    role: "Software engineer",
+    role: "Full-stack engineer",
     highlights: ["Electron", "React", "TypeScript"],
     period: "Independent SaaS",
     groups: [

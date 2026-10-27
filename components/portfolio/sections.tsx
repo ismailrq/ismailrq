@@ -86,11 +86,14 @@ export function ProjectsSection() {
           return (
             <article className="project-card" key={project.slug} style={{ "--project-accent": project.accent } as CSSProperties}>
               <div className="project-card-top">
-                <span className="project-category"><i aria-hidden="true" />{project.name}</span>
+                <span className="project-category"><i aria-hidden="true" />{presentation.role}</span>
                 <span className="project-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
               </div>
-              <h3>{presentation.role}</h3>
+              <h3>{project.name}</h3>
               <p>{project.summary}</p>
+              <ul className="project-highlights" aria-label={`${project.name} highlights`}>
+                {presentation.highlights.map(technology => <li key={technology}>{technology}</li>)}
+              </ul>
               <Link className="project-case-link" href={`/work/${project.slug}`} aria-label={`Explore project: ${project.name}`}>Explore project <ArrowUpRight size={18} aria-hidden="true" /></Link>
             </article>
           );
