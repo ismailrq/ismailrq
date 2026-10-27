@@ -32,7 +32,7 @@ export function HeroSection() {
         <div className="hero-details">
           <dl className="hero-facts">
             <div><dt>Based in</dt><dd>{country}</dd></div>
-            <div><dt>Availability</dt><dd>Open to work</dd></div>
+            <div><dt>Availability</dt><dd className="hero-availability"><span className="status-dot" aria-hidden="true" />Open to work</dd></div>
             <div><dt>Experience</dt><dd>4+ years</dd></div>
           </dl>
           <nav className="hero-socials" aria-label="Connect with Ismail">

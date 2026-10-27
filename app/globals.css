@@ -60,6 +60,8 @@ button, summary { cursor: pointer; }
 .hero-facts { flex: 1 1 360px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 0; }
 .hero-facts dt { margin: 0 0 6px; color: var(--quiet); font-family: var(--font-geist-mono); font-size: .6rem; letter-spacing: .07em; text-transform: uppercase; }
 .hero-facts dd { margin: 0; color: var(--foreground); font-size: .75rem; line-height: 1.5; }
+.hero-facts .hero-availability { display: flex; align-items: center; gap: 8px; }
+.hero-availability .status-dot { box-shadow: 0 0 0 3px rgba(200,245,106,.09), 0 0 9px rgba(200,245,106,.55); }
 .hero-socials { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 0 auto; }
 .hero-social-link { --social-accent: var(--foreground); display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid var(--border); color: var(--muted); transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease; }
 .hero-social-link:hover, .hero-social-link:focus-visible { color: var(--social-accent); border-color: var(--social-accent); background-color: color-mix(in srgb, var(--social-accent) 6%, transparent); }
