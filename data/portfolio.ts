@@ -14,6 +14,7 @@ export type NavigationItem = {
 export const skillCategories = [
   "Languages",
   "Frameworks & libraries",
+  "Architecture & patterns",
   "Engines & AR",
   "Databases & storage",
   "Background jobs & APIs",
@@ -175,7 +176,7 @@ export const skills: Skill[] = [
     "tone": "cobalt"
   },
   {
-    "name": "Flutter",
+    "name": "Flutter 3.x",
     "category": "Frameworks & libraries",
     "tone": "mint"
   },
@@ -248,6 +249,31 @@ export const skills: Skill[] = [
     "name": "Sentry",
     "category": "Development tools",
     "tone": "lime"
+  },
+  {
+    "name": "BLoC",
+    "category": "Frameworks & libraries",
+    "tone": "mint"
+  },
+  {
+    "name": "MVVM",
+    "category": "Architecture & patterns",
+    "tone": "lime"
+  },
+  {
+    "name": "Event-driven architecture",
+    "category": "Architecture & patterns",
+    "tone": "lime"
+  },
+  {
+    "name": "Firebase Remote Config",
+    "category": "Background jobs & APIs",
+    "tone": "mint"
+  },
+  {
+    "name": "Firebase Cloud Messaging",
+    "category": "Background jobs & APIs",
+    "tone": "mint"
   }
 ];
 
@@ -273,12 +299,16 @@ export const experience: Experience[] = [
     "role": "Mobile Engineer",
     "company": "BROKERAGE & REIM",
     "commits": [
-      "Built mobile features and integrations, resolving platform-specific and performance issues."
+      "Built Dart/Flutter 3.x features using BLoC event-driven state management and MVVM architecture.",
+      "Integrated Firebase Remote Config and Cloud Messaging; resolved platform-specific and performance issues."
     ],
     "technologies": [
-      "Mobile development",
-      "Integration",
-      "Performance"
+      "Dart",
+      "Flutter 3.x",
+      "BLoC",
+      "MVVM",
+      "Firebase Remote Config",
+      "Firebase Cloud Messaging"
     ]
   },
   {
@@ -502,9 +532,17 @@ export const projects: Project[] = [
     "label": "FREELANCE · ANDROID APP",
     "slug": "video-downloader",
     "name": "Video Downloader - Video Saver",
-    "summary": "An Android app for downloading, organizing, and playing media offline, with 10M+ downloads on Google Play.",
-    "description": "Built an Android application as a freelancer for downloading, organizing, and playing media offline, combining an integrated browser, automatic video detection, and download management.",
+    "summary": "An Android media downloader built with Kotlin and Jetpack Compose, with Room for local storage and Firebase services. Published on Google Play with 10M+ downloads.",
+    "description": "Built an Android application as a freelancer using Kotlin and Jetpack Compose for downloading, organizing, and playing media offline. Integrated Koin for dependency injection, Room for local persistence, Cloud Firestore for cloud data, Firebase Cloud Messaging for push notifications, and Firebase Crashlytics for crash reporting, alongside an integrated browser, automatic video detection, and download management.",
     "details": [
+      {
+        "label": "Android development",
+        "description": "Built the app in Kotlin with Jetpack Compose for the user interface and Koin for dependency injection."
+      },
+      {
+        "label": "Storage and Firebase services",
+        "description": "Used Room for local persistence, Cloud Firestore for cloud data, Firebase Cloud Messaging for push notifications, and Firebase Crashlytics for crash reporting and analysis."
+      },
       {
         "label": "Browser and media detection",
         "description": "Integrated browsing and automatic video detection help users find and save media from supported websites."
@@ -528,13 +566,21 @@ export const projects: Project[] = [
     ],
     "role": "Freelance Software Engineer.",
     "constraint": "Support media downloading, organization, and offline playback in an Android application.",
-    "decision": "Combined an integrated browser, automatic video detection, download management, and offline playback.",
+    "decision": "Used Kotlin, Jetpack Compose, Room, and Koin, with Cloud Firestore, Firebase Cloud Messaging, and Firebase Crashlytics supporting cloud data, notifications, and crash reporting.",
     "outcome": "Published Android app with 10M+ downloads on Google Play as of October 2026.",
-    "reliability": "Download controls include pause and resume support.",
-    "language": "Android",
+    "reliability": "Download controls include pause and resume support, with Firebase Crashlytics for crash reporting and analysis.",
+    "language": "Kotlin",
     "accent": "#c8f56a",
     "status": "Freelance client work",
-    "technologies": [],
+    "technologies": [
+      "Kotlin",
+      "Jetpack Compose",
+      "Room",
+      "Koin",
+      "Cloud Firestore",
+      "Firebase Cloud Messaging",
+      "Firebase Crashlytics"
+    ],
     "stars": 0,
     "url": "https://play.google.com/store/apps/details?id=com.vanced.video.downloader&hl=en",
     "urlLabel": "View on Google Play"

@@ -22,9 +22,13 @@ const presentations: Record<string, ProjectPresentation> = {
   },
   "video-downloader": {
     role: "Software engineer",
-    highlights: ["Android", "10M+ downloads", "Freelance"],
+    highlights: ["Kotlin", "Jetpack Compose", "10M+ downloads"],
     period: "Freelance client work",
-    groups: [],
+    groups: [
+      { label: "Android", technologies: ["Kotlin", "Jetpack Compose", "Koin"] },
+      { label: "Data", technologies: ["Room", "Cloud Firestore"] },
+      { label: "Notifications & monitoring", technologies: ["Firebase Cloud Messaging", "Firebase Crashlytics"] },
+    ],
   },
   mediahunter: {
     role: "Software engineer",

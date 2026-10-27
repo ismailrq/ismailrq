@@ -145,14 +145,14 @@ button, summary { cursor: pointer; }
 .contact-form { min-width: 0; }
 .form-body { display: grid; gap: 18px; }
 .form-field label { display: flex; gap: 8px; font-family: var(--font-geist-mono); font-size: .7rem; margin-bottom: 8px; color: var(--muted); }
-.form-field label span { color: var(--quiet); }
+.form-field label span { color: var(--muted); }
 .form-field input, .form-field textarea { display: block; width: 100%; border: 1px solid var(--border); border-radius: 5px; background: var(--surface); padding: 12px; font-size: .85rem; }
 .form-field textarea { resize: vertical; min-height: 130px; }
 .form-field input::placeholder, .form-field textarea::placeholder { color: var(--quiet); }
 .form-field [aria-invalid="true"] { border-color: var(--danger); }
 .field-error { color: var(--danger); font-size: .75rem; margin: 8px 0 0; }
 .form-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; }
-.form-actions p { display: flex; align-items: center; gap: 8px; color: var(--quiet); font-size: .65rem; margin: 0; }
+.form-actions p { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: .65rem; margin: 0; }
 .minimal-footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; border-top: 1px solid var(--border); padding-block: 28px; color: var(--quiet); font-family: var(--font-geist-mono); font-size: .65rem; }
 .minimal-footer > div { display: flex; align-items: center; gap: 24px; }
 .minimal-footer a:hover { color: var(--foreground); }

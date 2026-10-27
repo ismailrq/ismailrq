@@ -5,6 +5,9 @@ import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { SiteShell } from "@/components/portfolio/SiteShell";
 import { projects } from "@/data/portfolio";
 import { getProjectPresentation } from "@/data/project-presentation";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { pageMetadata } from "@/lib/site";
+import { projectStructuredData } from "@/lib/structured-data";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -20,7 +23,11 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = findProject((await params).slug);
-  return { title: `${project.name} — Ismail Raqi`, description: project.summary };
+  return pageMetadata({
+    title: `${project.name} — Ismail Raqi`,
+    description: project.summary,
+    pathname: `/work/${project.slug}`,
+  });
 }
 
 export default async function ProjectPage({ params }: Props) {
@@ -30,6 +37,7 @@ export default async function ProjectPage({ params }: Props) {
 
   return (
     <SiteShell active="work">
+      <JsonLd data={projectStructuredData(project)} />
       <article className="project-page page-container" aria-labelledby="project-title">
         <Link className="project-back text-link" href="/#projects"><ArrowLeft size={16} aria-hidden="true" /> All projects</Link>
 

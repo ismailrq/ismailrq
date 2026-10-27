@@ -1,8 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { profile } from "@/data/portfolio";
+import { absoluteUrl, siteUrl } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Ismail Raqi — Software Engineer",
   description: profile.about,
   applicationName: "Ismail Raqi Portfolio",
@@ -38,6 +40,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="describedby" href={absoluteUrl("/llms.txt")} type="text/plain" />
+      </head>
       <body>{children}</body>
     </html>
   );

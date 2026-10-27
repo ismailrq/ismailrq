@@ -1,11 +1,22 @@
 import Link from "next/link";
-import Image from "next/image";
+import { getImageProps } from "next/image";
 import type { CSSProperties } from "react";
 import { ArrowUpRight, Mail } from "lucide-react";
 import { ContactForm } from "./ContactForm";
 import { CvDropdown } from "./CvDropdown";
 import { experience, profile, projects, skillCategories, skills, socials } from "@/data/portfolio";
 import { getProjectPresentation } from "@/data/project-presentation";
+
+// Generate responsive URLs on the server; this static portrait needs no client state.
+const { props: portraitProps } = getImageProps({
+  className: "profile-portrait",
+  src: "/images/ismail-raqi-deep-blue.png",
+  alt: "Portrait of Ismail Raqi",
+  fill: true,
+  sizes: "(max-width: 760px) calc(92vw - 39px), (max-width: 1000px) 239px, 287px",
+  loading: "eager",
+  fetchPriority: "high",
+});
 
 export function HeroSection() {
   const roleWords = profile.role.split(" ");
@@ -15,14 +26,7 @@ export function HeroSection() {
     <section className="landing-intro page-container" id="home" aria-labelledby="intro-title">
       <aside className="profile-card" aria-label="Portrait">
         <div className="profile-portrait-stage">
-          <Image
-            className="profile-portrait"
-            src="/images/ismail-raqi-deep-blue.png"
-            alt="Portrait of Ismail Raqi"
-            fill
-            sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1000px) 300px, 360px"
-            preload
-          />
+          <img {...portraitProps} alt={portraitProps.alt} />
         </div>
       </aside>
       <div className="landing-copy" id="about">
@@ -90,7 +94,7 @@ export function ProjectsSection() {
               <ul className="project-highlights" aria-label={`${project.name} highlights`}>
                 {presentation.highlights.map(technology => <li key={technology}>{technology}</li>)}
               </ul>
-              <Link className="project-case-link" href={`/work/${project.slug}`} aria-label={`Explore ${project.name}`}>Explore project <ArrowUpRight size={18} aria-hidden="true" /></Link>
+              <Link className="project-case-link" href={`/work/${project.slug}`} aria-label={`Explore project: ${project.name}`}>Explore project <ArrowUpRight size={18} aria-hidden="true" /></Link>
             </article>
           );
         })}
