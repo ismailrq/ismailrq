@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { CSSProperties } from "react";
 import { ArrowUpRight, Mail } from "lucide-react";
 import { ContactForm } from "./ContactForm";
+import { CvDropdown } from "./CvDropdown";
 import { experience, profile, projects, skillCategories, skills, socials } from "@/data/portfolio";
 import { getProjectPresentation } from "@/data/project-presentation";
 
@@ -32,10 +33,11 @@ export function HeroSection() {
         <div className="hero-details">
           <dl className="hero-facts">
             <div><dt>Based in</dt><dd>{country}</dd></div>
-            <div><dt>Availability</dt><dd className="hero-availability"><span className="status-dot" aria-hidden="true" />Open to work</dd></div>
             <div><dt>Experience</dt><dd>4+ years</dd></div>
+            <div><dt>Availability</dt><dd className="hero-availability"><span className="status-dot" aria-hidden="true" />Open to work</dd></div>
           </dl>
           <nav className="hero-socials" aria-label="Connect with Ismail">
+            <CvDropdown />
             {socials.filter(social => social.url && (social.label === "GitHub" || social.label === "LinkedIn")).map(social => (
               <a
                 className={`hero-social-link hero-social-${social.label.toLowerCase()}`}

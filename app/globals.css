@@ -73,6 +73,17 @@ button, summary { cursor: pointer; }
 .hero-social-link svg { flex-shrink: 0; }
 .hero-social-linkedin { --social-accent: #78b8ff; }
 .hero-social-email { --social-accent: var(--mint); }
+.cv-dropdown { position: relative; z-index: 5; font-size: .75rem; }
+.cv-trigger { display: flex; align-items: center; justify-content: center; gap: 7px; height: 36px; padding-inline: 10px; border: 1px solid var(--border); background: transparent; color: var(--muted); font: inherit; transition: color 180ms ease, border-color 180ms ease; }
+.cv-trigger:hover, .cv-dropdown[data-open="true"] > .cv-trigger { color: var(--cobalt); border-color: var(--cobalt); }
+.cv-trigger svg { transition: transform 180ms ease; }
+.cv-dropdown[data-open="true"] > .cv-trigger svg { transform: rotate(180deg); }
+.cv-options { position: absolute; top: calc(100% + 8px); left: 0; width: 210px; padding: 6px; border: 1px solid var(--border); border-radius: 6px; background: #171b22; box-shadow: 0 12px 32px rgba(0,0,0,.3); }
+.cv-dropdown[data-placement="up"] .cv-options { top: auto; left: auto; right: 0; bottom: calc(100% + 8px); }
+.cv-option { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; padding: 10px; color: var(--foreground); border-radius: 3px; }
+.cv-options a:hover, .cv-options a:focus-visible { color: var(--cobalt); background: rgba(153,170,255,.07); }
+.cv-option-unavailable { color: var(--muted); }
+.cv-option small { color: var(--quiet); font-size: .65rem; }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 44px; padding: 11px 17px; border: 1px solid var(--border); border-radius: 5px; font-size: .8rem; font-weight: 550; transition: background 150ms ease; }
 .button-primary { background: var(--cobalt); color: #151922; border-color: var(--cobalt); }
 .button-primary:hover { background: #b0bdff; }
@@ -139,7 +150,7 @@ button, summary { cursor: pointer; }
 .form-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; }
 .form-actions p { display: flex; align-items: center; gap: 8px; color: var(--quiet); font-size: .65rem; margin: 0; }
 .minimal-footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; border-top: 1px solid var(--border); padding-block: 28px; color: var(--quiet); font-family: var(--font-geist-mono); font-size: .65rem; }
-.minimal-footer > div { display: flex; gap: 24px; }
+.minimal-footer > div { display: flex; align-items: center; gap: 24px; }
 .minimal-footer a:hover { color: var(--foreground); }
 .experience-row { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 28px; padding-block: 28px; border-bottom: 1px solid var(--border); }
 .experience-row:first-child { padding-top: 0; }
