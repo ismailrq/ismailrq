@@ -61,7 +61,12 @@ button, summary { cursor: pointer; }
 .hero-facts dt { margin: 0 0 6px; color: var(--quiet); font-family: var(--font-geist-mono); font-size: .6rem; letter-spacing: .07em; text-transform: uppercase; }
 .hero-facts dd { margin: 0; color: var(--foreground); font-size: .75rem; line-height: 1.5; }
 .hero-facts .hero-availability { display: flex; align-items: center; gap: 8px; }
-.hero-availability .status-dot { box-shadow: 0 0 0 3px rgba(200,245,106,.09), 0 0 9px rgba(200,245,106,.55); }
+.hero-availability .status-dot { position: relative; box-shadow: 0 0 0 3px rgba(200,245,106,.09), 0 0 9px rgba(200,245,106,.55); }
+.hero-availability .status-dot::after { content: ""; position: absolute; inset: -3px; border: 1px solid var(--lime); border-radius: 50%; pointer-events: none; animation: availability-pulse 2s ease-out infinite; }
+@keyframes availability-pulse {
+  0% { transform: scale(.5); opacity: .6; }
+  75%, 100% { transform: scale(1.5); opacity: 0; }
+}
 .hero-socials { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 0 auto; }
 .hero-social-link { --social-accent: var(--foreground); display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid var(--border); color: var(--muted); transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease; }
 .hero-social-link:hover, .hero-social-link:focus-visible { color: var(--social-accent); border-color: var(--social-accent); background-color: color-mix(in srgb, var(--social-accent) 6%, transparent); }
@@ -209,6 +214,7 @@ button, summary { cursor: pointer; }
 
 @media (prefers-reduced-motion: reduce) {
   .terminal-caret, .landing-copy, .minimal-section-heading { animation: none; }
+  .hero-availability .status-dot::after { animation: none; opacity: 0; }
   .project-card:hover, .project-card:focus-within, .button:hover { transform: none; }
 }
 
