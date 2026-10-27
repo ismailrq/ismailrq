@@ -156,6 +156,11 @@ export const systemNodes: SystemNode[] = [
 
 export const skills: Skill[] = [
   {
+    "name": "Kotlin",
+    "category": "Languages",
+    "tone": "cobalt"
+  },
+  {
     "name": "Python",
     "category": "Languages",
     "tone": "cobalt"
@@ -181,6 +186,16 @@ export const skills: Skill[] = [
     "tone": "mint"
   },
   {
+    "name": "Jetpack Compose",
+    "category": "Frameworks & libraries",
+    "tone": "mint"
+  },
+  {
+    "name": "Koin",
+    "category": "Frameworks & libraries",
+    "tone": "mint"
+  },
+  {
     "name": "FastAPI",
     "category": "Frameworks & libraries",
     "tone": "mint"
@@ -202,6 +217,16 @@ export const skills: Skill[] = [
   },
   {
     "name": "SQLite",
+    "category": "Databases & storage",
+    "tone": "cobalt"
+  },
+  {
+    "name": "Room",
+    "category": "Databases & storage",
+    "tone": "cobalt"
+  },
+  {
+    "name": "Cloud Firestore",
     "category": "Databases & storage",
     "tone": "cobalt"
   },
@@ -247,6 +272,11 @@ export const skills: Skill[] = [
   },
   {
     "name": "Sentry",
+    "category": "Development tools",
+    "tone": "lime"
+  },
+  {
+    "name": "Firebase Crashlytics",
     "category": "Development tools",
     "tone": "lime"
   },
