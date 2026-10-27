@@ -309,8 +309,8 @@ export const skills: Skill[] = [
 
 export const experience: Experience[] = [
   {
-    "period": "Nov 2023 - Aug 2026",
-    "role": "CTO & Lead Developer",
+    "period": "Nov 2022 - Aug 2026",
+    "role": "Senior Mobile engineer",
     "company": "BROKERAGE & REIM",
     "commits": [
       "Owned application architecture and technical decisions, defining how its core components communicate.",
@@ -325,7 +325,7 @@ export const experience: Experience[] = [
     "summary": "Location-based augmented reality real estate platform · Morocco"
   },
   {
-    "period": "Sep 2022 - Nov 2023",
+    "period": "Sep 2022 - Nov 2022",
     "role": "Mobile Engineer",
     "company": "BROKERAGE & REIM",
     "commits": [
@@ -403,7 +403,7 @@ export const projects: Project[] = [
         "description": "AR initialization and tracking checks, platform-specific fixes, and Sentry for crash analytics and logs."
       }
     ],
-    "role": "CTO & Lead Developer, Nov 2023 - Aug 2026; previously Mobile Engineer, Sep 2022 - Nov 2023.",
+    "role": "Senior Mobile engineer, Nov 2022 - Aug 2026; previously Mobile Engineer, Sep 2022 - Nov 2022.",
     "constraint": "Coordinate mobile, location-based AR, and backend integration work across iOS and Android.",
     "decision": "Used a modular framework for embedding Unity with bidirectional communication and lifecycle management in the Flutter app.",
     "outcome": "Led mobile, location-based AR, and backend integration work, including Firebase Remote Config and Cloud Messaging. Set development priorities and managed native builds and tester releases.",
@@ -559,7 +559,7 @@ export const projects: Project[] = [
     "stars": 0
   },
   {
-    "label": "FREELANCE · ANDROID APP",
+    "label": "FREELANCE · DEC 2022–JUL 2025",
     "slug": "video-downloader",
     "name": "Video Downloader - Video Saver",
     "summary": "An Android media downloader built with Kotlin and Jetpack Compose, with Room for local storage and Firebase services. Published on Google Play with 10M+ downloads.",
@@ -594,7 +594,7 @@ export const projects: Project[] = [
         "description": "Published on Google Play, where the listing shows 10M+ downloads as of October 2026."
       }
     ],
-    "role": "Freelance Software Engineer.",
+    "role": "Freelance Mobile engineer, Dec 2022 - Jul 2025.",
     "constraint": "Support media downloading, organization, and offline playback in an Android application.",
     "decision": "Used Kotlin, Jetpack Compose, Room, and Koin, with Cloud Firestore, Firebase Cloud Messaging, and Firebase Crashlytics supporting cloud data, notifications, and crash reporting.",
     "outcome": "Published Android app with 10M+ downloads on Google Play as of October 2026.",

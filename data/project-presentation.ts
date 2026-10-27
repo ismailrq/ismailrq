@@ -21,9 +21,9 @@ const presentations: Record<string, ProjectPresentation> = {
     ],
   },
   "video-downloader": {
-    role: "Software engineer",
+    role: "Mobile engineer",
     highlights: ["Kotlin", "Jetpack Compose", "10M+ downloads"],
-    period: "Freelance client work",
+    period: "Dec 2022 – Jul 2025",
     groups: [
       { label: "Android", technologies: ["Kotlin", "Jetpack Compose", "Koin"] },
       { label: "Data", technologies: ["Room", "Cloud Firestore"] },
