@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, Download } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
 
 type CvOption = { language: string; label: string; href: string | null };
@@ -42,9 +42,9 @@ export function CvMenu({ options, placement }: { options: CvOption[]; placement:
       </button>
       {open ? <div className="cv-options" id={optionsId}>
         {options.map(option => option.href ? (
-          <a className="cv-option" key={option.language} href={option.href} hrefLang={option.language} download onClick={() => setOpen(false)} aria-label={`Download CV in ${option.label}`}>
+          <a className="cv-option" key={option.language} href={option.href} hrefLang={option.language} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} aria-label={`Open CV in ${option.label} (PDF, opens in a new tab)`}>
             <span lang={option.language}>{option.label}</span>
-            <Download size={14} aria-hidden="true" />
+            <span className="cv-format">PDF</span>
           </a>
         ) : (
           <span className="cv-option cv-option-unavailable" key={option.language} aria-disabled="true">
